@@ -9,17 +9,17 @@ tags:
 
 ## 普通进位制
 
-对于一个 $k(k\geqslant 2)$ 进制的数 $\cdots a_2a_1a_0.a_{-1}a_{-2}\cdots$，其每一位的值都满足 $a_i\in\lbrace 0,1,2,\cdots,k-1\rbrace$，该数在数值上等于
+对于一个 $k(k\geqslant 2)$ 进制的数 $\cdots a_2a_1a_0.a_{-1}a_{-2}\cdots$，其每一位的值都满足 $a_i\in\{0,1,2,\cdots,k-1\}$，该数在数值上等于
 
 $$\sum_ik^ia_i$$
+
+<!-- more -->
 
 ### 整数部分
 
 若该数在 $k$ 进制下是 $n$ 位正整数 $a_{n-1}a_{n-2}\cdots a_2a_1a_0$，则其数值是一个关于 $k$ 的 $n-1$ 次多项式：
 
 $$\sum_{i=0}^{n-1}k^ia_i$$
-
-<!-- more -->
 
 可用秦九韶算法求出，也可用一个变量更新 $k$ 的幂，时间复杂度均为 $O(n)$，不过讨论数位的顺序相反。
 
@@ -87,10 +87,10 @@ double base_k2(int *a, int m, int k) {
 
 $$\begin{aligned}
 \lfloor ky\rfloor&=a_{-1}\\
-\lbrace ky\rbrace&=\dfrac{1}{k}\left(a_{-2}+\dfrac{1}{k}\left(\cdots+\dfrac{1}{k}a_{-m}\right)\right)
+\{ ky\}&=\dfrac{1}{k}\left(a_{-2}+\dfrac{1}{k}\left(\cdots+\dfrac{1}{k}a_{-m}\right)\right)
 \end{aligned}$$
 
-令 $y'=\lbrace ky\rbrace$，则又有 $\lfloor ky'\rfloor=a_{-2}$；令 $y''=\lbrace ky'\rbrace$，则 $\lfloor ky''\rfloor=a_{-3}$……不断重复该过程，可求出每一位的值。求小数部分时通常会限制小数部分的位数 $m$。
+令 $y'=\{ ky\}$，则又有 $\lfloor ky'\rfloor=a_{-2}$；令 $y''=\{ ky'\}$，则 $\lfloor ky''\rfloor=a_{-3}$……不断重复该过程，可求出每一位的值。求小数部分时通常会限制小数部分的位数 $m$。
 
 ```cpp
 void base_k(int *a, int m, int k, double y) {

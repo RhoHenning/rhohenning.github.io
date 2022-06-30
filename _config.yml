@@ -233,7 +233,7 @@ social_icons:
 
 # Sidebar Avatar
 # in directory: /assets/images/avatar.gif
-#avatar:
+avatar: /assets/images/avatar.png
 
 
 # Table Of Contents in the Sidebar
@@ -438,7 +438,7 @@ gitalk:
   enable: true
   clientID: 4668f4c8848db3750cb2
   clientSecret: 097527527af3989a6ba8fa0142082796142f3f4a
-  repo: rhohenning
+  repo: rhohenning.github.io
   owner: RhoHenning
   admin: RhoHenning
 
